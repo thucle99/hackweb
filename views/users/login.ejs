@@ -1,0 +1,122 @@
+<html>
+<header>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"
+        integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">  
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../css/index.css">
+</header>
+
+<body class="background">
+    <header class="container header p-5">
+        <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="http://localhost:3000/index">
+                <img src="../ảnh/logo.jpg"/>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item active ">
+                       <a class="nav-link " href="http://localhost:3000/index">Trang Chủ |<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#">Giới Thiệu |</a>
+                     </li>
+                    <li class="nav-item ">
+                       <a class="nav-link" href="#">Tin Tức |</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:3000/index/transfer">Chuyển Tiền</a>
+                    </li>
+                </ul>  
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+            <% var value=""%> 
+            <% if( typeof(errors) !='undefined'){%>  
+                    <% value =values %> 
+                    <div class="alert alert-success m-4">
+                        <strong> <%= errors %> </strong>
+                    </div>
+            <% } %>  
+
+        <form class="w3-container" action="/auth/login" method="POST">
+            <div class="w3-section">
+                <label for="name"><b>Tài Khoản</b></label>
+                <input class="form-control my-3" id="name" type="text" 
+                    placeholder="Nhập Tài Khoản" name="name" required value =<%= value.name %> >
+                <label for="password"><b>Mật Khẩu</b></label>
+                <input class="form-control my-3" id="password" type="password" 
+                    placeholder="Nhập Mật Khẩu" name="password" required>
+                <button class="btn btn-success"
+                    type="submit">Đăng Nhập</button>
+                <input class="my-4" type="checkbox" 
+                    checked="checked"> Nhớ Mật Khẩu
+            </div>
+            <p>Bạn chưa có tài khoản ?,<a href="http://localhost:3000/auth/create" class="text-success">Click vào đây</a></p>
+        </form>
+    </div>
+    <footer>
+        <div class="row my-5 infomartion">
+            <div class="col-md-3 pl-5">
+                <h3>LIÊN HỆ</h3>
+                <a href="" class="d-flex"><i class="fas fa-phone-volume"></i> <p> 0344742282</p> </a>
+                <a href="" class="d-flex"><i class="fas fa-comment-alt"></i> <p>  Cơ chế tốc giác</p> </a>
+            </div>
+            <div class="col-md-3">
+                <h3>TÌM VIETCOMBANK</h3> 
+                <a href="" class="d-flex"> <i class="fas fa-calculator"></i>  <p> Điểm đặt ATM</p> </a>
+                <a href="" class="d-flex"><i class="fas fa-building"></i>  <p>Điểm giao dịch</p> </a>
+            </div>
+            <div class="col-md-3 align-content-start">
+                <h3>THÔNG TIN</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="" class="d-flex"> <i class="fas fa-university"></i> <p>Tỷ giá</p> </a>
+                        <a href="" class="d-flex"><i class="fas fa-money-check-alt"></i> <p>Biểu phí</p> </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="" class="d-flex"><i class="fas fa-money-bill-wave"></i> <p>Lãi Suất</p> </a>
+                        <a href="" class="d-flex"><i class="fas fa-camera-retro"></i> <p>Biểu mẫu</p> </a>
+                    </div>
+                </div>
+                <a href="" class="d-flex"><i class="fas fa-comment"></i> <p>Câu hỏi thường gặp</p> </a>
+            </div>
+            <div class="col-md-3">
+                <h3>CÔNG CỤ TÍNH TOÁN</h3>
+                <a href="" class="d-flex"><i class="fas fa-sync"></i> <p>Chuyển đổi ngoại tệ</p> </a>
+                <a href="" class="d-flex"><i class="fas fa-hand-holding-usd"></i> <p>Tính lịch trả nợ</p> </a>
+                <a href="" class="d-flex"><i class="fas fa-piggy-bank"></i> <p>Tính lãi tiết kiệm</p> </a>
+            </div>
+        </div>
+        <div class="connect">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <a href="https://www.youtube.com/channel/UCXqigvBOlJqNq5bwuHIDfQA?view_as=subscriber"> <i class=" fab fa-youtube"></i></a>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <a href="https://www.instagram.com/thucle_99/"> <i class=" fab fa-instagram"></i></a>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <a href="https://www.facebook.com/athuc99"> <i class=" fab fa-facebook"></i></a>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <a href="https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fcontacts.google.com%2F%3Fhl%3Dvi&hl=vi&flowName=GlifWebSignIn&flowEntry=AddSession"> <i class=" fab fa-google-plus-g"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="company text-center">
+            <p>© Copyright 2008-2020. Designed by Thucle-Entertaiment</p>
+            <p> -Bản quyền thuộc về <strong>Thucle Company</strong></p>
+        </div>  
+    </footer>
+</body>
+</html>
